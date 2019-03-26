@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /api/
+  port: 8080
+
+spring:
+  jackson:
+    serialization:
+      indent-output: true  
