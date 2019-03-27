@@ -1,0 +1,33 @@
+<div id="search-component">
+
+  <div class="row mb-4">
+      <div class="col-md-2 | pl-0 mb-1">Pincode</div>
+      <div class="col-md-7 px-0"> 
+        <input #searchBox id="search-box"/>  
+      </div>
+      <div class="col-md-3 | al-r"> 
+          <button class="btn btn-dark | col-md-5 mr-2 | btn-custom" (click)="search(searchBox.value)">Search <br/> Results</button>
+          <button class="btn btn-dark | col-md-6 | btn-custom" (click)="save(searchBox.value)">Download <br/> Results</button>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-2 | pl-0 mb-1">Restaurant</div>
+      <div class="col-md-10 | col-custom"> 
+          <ul class="search-result">
+              <li *ngFor="let restaurante of restaurantes$ | async" >
+                <a>
+                 Name: {{ restaurante.name }}
+                </a>
+                <a>
+                 Address: {{ restaurante.address }}
+                </a>
+                <a>
+                 Rating: {{ restaurante.rating }}
+                  </a>
+              </li>
+            </ul>
+      </div>
+  </div>
+
+</div>
